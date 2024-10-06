@@ -1,8 +1,8 @@
-import { FaReact, FaNodeJs, FaPython, FaDatabase, FaJira, FaFigma, FaGit, FaAndroid, FaCogs } from 'react-icons/fa';
-import { SiNextdotjs, SiDjango } from 'react-icons/si';  // Import from 'react-icons/si' for specific icons
-import { AiOutlineApi } from 'react-icons/ai';  // Example of importing a specific API-related icon
+import { FaReact, FaDatabase, FaJira, FaFigma, FaGit, FaAndroid, FaCogs } from 'react-icons/fa';
+import { SiNextdotjs, SiDjango } from 'react-icons/si';  
+import { AiOutlineApi } from 'react-icons/ai'; 
 
-// Updated skills data with corrected icons
+
 const skills = [
   {
     title: "React.js",
@@ -27,7 +27,7 @@ const skills = [
   {
     title: "Django & Django Rest Framework",
     description: "Ability to implement authentication and authorization mechanisms in Django. Skilled in building RESTful APIs using Django Rest Framework.",
-    icon: <SiDjango size={40} className="text-green-600" />  // Corrected icon for Django
+    icon: <SiDjango size={40} className="text-green-600" />  
   },
   {
     title: "Agile & Jira",
@@ -42,7 +42,7 @@ const skills = [
   {
     title: "Analytics",
     description: "Solid grasp of using Google Analytics to track user behavior and measure engagement.",
-    icon: <AiOutlineApi size={40} className="text-yellow-600" />  // Example alternative to FaGoogle
+    icon: <AiOutlineApi size={40} className="text-yellow-600" />  
   },
   {
     title: "Design Tools",
@@ -57,7 +57,7 @@ const skills = [
   {
     title: "Prioritization Techniques",
     description: "Knowledgeable in prioritization techniques such as Weighted Scoring and MoSCoW.",
-    icon: <FaCogs size={40} className="text-gray-600" />  // Example icon for general purpose
+    icon: <FaCogs size={40} className="text-gray-600" />  
   }
 ];
 
