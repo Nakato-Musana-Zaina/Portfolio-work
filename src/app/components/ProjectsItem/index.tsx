@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link'; 
-import { ProjectItemProps } from './types'; 
+import { ProjectItemProps } from '../types'; 
 
 const ProjectItem: React.FC<ProjectItemProps> = ({ title, description, link }) => (
   <div className="bg-gray-200 p-4 rounded-lg shadow-lg mb-4">
