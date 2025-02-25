@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import nakato from '/public/nakato.jpg';
 import Image from 'next/image';
+import Navbar from '../components/Navbar';
 
 const Hero = () => {
   const [isDownloading, setIsDownloading] = useState(false);
@@ -48,27 +49,7 @@ const Hero = () => {
 
   return (
     <div className={`min-h-screen ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-black'} overflow-hidden relative`}>
-      {/* Navigation Bar */}
-      <nav className={`sticky top-0 z-50 ${isDarkMode ? 'bg-gray-800' : 'bg-green-900'} text-white p-4 flex justify-between items-center`}>
-        <div className="flex items-center">
-          <span className="text-xl font-bold">Portfolio</span>
-        </div>
-        <div className="flex space-x-6">
-          <a href="#" className="hover:text-yellow-400 transition-colors duration-300">HOME</a>
-          <a href="#" className="hover:text-yellow-400 transition-colors duration-300">PAGES</a>
-          <a href="#" className="hover:text-yellow-400 transition-colors duration-300">PORTFOLIO</a>
-          <a href="#" className="hover:text-yellow-400 transition-colors duration-300">BLOG</a>
-          <a href="#" className="hover:text-yellow-400 transition-colors duration-300">CONTACT US</a>
-        </div>
-        <div className="flex items-center space-x-4">
-          <button onClick={toggleDarkMode} className="p-2 rounded-full hover:bg-gray-700 transition-colors duration-300">
-            {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
-          </button>
-          <button className="bg-yellow-400 text-black px-4 py-2 rounded-full hover:bg-yellow-500 transition-colors duration-300">
-            HIRE ME
-          </button>
-        </div>
-      </nav>
+      <Navbar/>
 
       {/* Hero Section */}
       <div className="container mx-auto px-4 py-12 relative z-10">
@@ -82,11 +63,10 @@ const Hero = () => {
               <br />
               <span className="text-5xl text-green-800">Full Stack Developer</span>
               <br />
-              <span className='text-4xl '> Based In Uganda  </span>
+              <span className='text-2xl '> Based In Uganda  </span>
             </h1>
-            <p className="text-gray-900 dark:text-gray-300 text-lg tracking-wide">
-              There are many variations Lorem Ipsum but the majority have suffered
-              alteration in some injected humour.
+            <p className="text-gray-900 dark:text-gray-900 text-lg tracking-wide">
+              Passionate about technology and innovation aimed at improving the quality of life .
             </p>
             
             <div className="flex">
@@ -97,13 +77,12 @@ const Hero = () => {
                 disabled={isDownloading}
                 className="bg-gradient-to-r from-green-700 to-orange-500 text-white px-6 py-4 rounded-full hover:opacity-90 transition-opacity duration-300 flex items-center space-x-2"
               >
-                <span>VIEW WORK</span> {/* Shortened label */}
+                <span>VIEW WORK</span> 
                 <span>→</span>
               </motion.button>
             </div>
           </motion.div>
 
-          {/* Right Content - Image */}
           <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1 }} className="relative">
             <div className="relative z-10">
               <Image
@@ -116,12 +95,12 @@ const Hero = () => {
               <div className="flex mt-8 space-x-4 justify-center">
                 {/* Social Media Icons with Individual Backgrounds */}
                 <div className="bg-orange-300 p-2 rounded-full">
-                  <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400 transition-colors duration-300">
+                  <a href="www.linkedin.com/in/nakato-musana-zaina-9227992b3" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400 transition-colors duration-300">
                     <Linkedin size={32} />
                   </a>
                 </div>
                 <div className="bg-orange-300 p-2 rounded-full">
-                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400 transition-colors duration-300">
+                  <a href="https://github.com/Nakato-Musana-Zaina" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400 transition-colors duration-300">
                     <Github size={32} />
                   </a>
                 </div>
@@ -131,12 +110,12 @@ const Hero = () => {
                   </a>
                 </div>
                 <div className="bg-orange-300 p-2 rounded-full">
-                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400 transition-colors duration-300">
+                  <a href="www.linkedin.com/in/nakato-musana-zaina-9227992b3" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400 transition-colors duration-300">
                     <Instagram size={32} />
                   </a>
                 </div>
                 <div className="bg-orange-300 p-2 rounded-full">
-                  <a href="mailto:example@example.com" className="hover:text-yellow-400 transition-colors duration-300">
+                  <a href="mailto:nakatozainamusana@gmail.com" className="hover:text-yellow-400 transition-colors duration-300">
                     <Mail size={32} />
                   </a>
                 </div>
