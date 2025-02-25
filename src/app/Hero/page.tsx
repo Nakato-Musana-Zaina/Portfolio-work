@@ -9,8 +9,7 @@ import {
   Twitter, 
   Instagram, 
   Mail, 
-  Moon, 
-  Sun 
+  
 } from 'lucide-react';
 import nakato from '/public/nakato.jpg';
 import Image from 'next/image';
@@ -30,13 +29,7 @@ const Hero = () => {
     link.click();
   };
 
-  // Toggle Dark Mode
-  const toggleDarkMode = () => {
-    const newMode = !isDarkMode;
-    setIsDarkMode(newMode);
-    document.documentElement.classList.toggle('dark');
-    localStorage.setItem('theme', newMode ? 'dark' : 'light'); // Save preference
-  };
+ 
 
   // Persist Dark Mode Preference
   useEffect(() => {
@@ -59,6 +52,7 @@ const Hero = () => {
           <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1 }} className="space-y-8">
             <div className="text-yellow-400 text-lg tracking-wider">✦ WELCOME TO PORTFOLIO ✦</div>
             <h1 className="text-6xl font-bold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-green-700 to-orange-500">
+             {/* eslint-disable-next-line react/no-unescaped-entities */}
               I'm Nakato Musana Zaina
               <br />
               <span className="text-5xl text-green-800">Full Stack Developer</span>

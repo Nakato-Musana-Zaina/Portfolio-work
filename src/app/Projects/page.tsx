@@ -1,14 +1,11 @@
+// src/app/Projects/page.tsx
 'use client';
 import { FaGithub, FaExternalLinkAlt, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 
-// Define Props Interface for TypeScript
-interface ProjectsProps {
-  isDarkMode: boolean; // Explicitly define the type of isDarkMode
-}
-
+// Define project data
 const projects = [
   {
     title: "Suubi",
@@ -43,8 +40,8 @@ const projects = [
   },
 ];
 
-const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
-  const [page, setPage] = useState(0); // Current page index
+const Projects = () => {
+  const [page, setPage] = useState(0); 
 
   // Paginate projects to show only two at a time
   const paginatedProjects = projects.slice(page * 2, page * 2 + 2);
@@ -63,12 +60,7 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
   };
 
   return (
-    <section
-      id="projects"
-      className={`w-full ${isDarkMode ? "bg-black" : "bg-gradient-to-b from-gray-100 to-white"} ${
-        isDarkMode ? "text-white" : "text-black"
-      } py-8 md:py-16 relative`}
-    >
+    <section id="projects" className="w-full mb-14 bg-gradient-to-b from-gray-100 to-white text-black py-8 md:py-16 relative">
       <div className="container mx-auto px-4 md:px-8 max-w-6xl">
         {/* Title */}
         <motion.h2
@@ -84,11 +76,10 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
         </h3>
         <motion.hr
           initial={{ width: 0 }}
-          animate={{ width: "50%" }}
+          animate={{ width: '50%' }}
           transition={{ duration: 0.5 }}
           className="border-t-2 border-green-700 mx-auto mb-8 md:mb-12"
         />
-
         {/* Projects Grid */}
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 gap-10 md:gap-12 lg:gap-16"
@@ -107,7 +98,7 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
                 hidden: { opacity: 0, y: 50 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
               }}
-              className={`bg-gradient-to-b from-green-100 to-white shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl`}
+              className="bg-gradient-to-b from-green-100 to-white shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl"
             >
               {/* Project Image */}
               <div className="relative h-40 sm:h-48 overflow-hidden">
@@ -119,20 +110,15 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                 />
               </div>
-
               {/* Project Details */}
-              <div className={`p-4 sm:p-6 ${isDarkMode ? "text-gray-300" : "text-gray-700"}`}>
+              <div className="p-4 sm:p-6 text-gray-700">
                 <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-2">{project.title}</h3>
                 <p className="text-sm sm:text-base md:text-lg mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag, idx) => (
                     <span
                       key={idx}
-                      className={`px-2 py-1 rounded-full text-xs sm:text-sm ${
-                        isDarkMode
-                          ? "bg-green-700 text-white"
-                          : "bg-green-200 text-green-800"
-                      }`}
+                      className="px-2 py-1 rounded-full text-xs sm:text-sm bg-green-200 text-green-800"
                     >
                       {tag}
                     </span>
@@ -148,7 +134,6 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
                   >
                     <FaGithub className="mr-2" /> GitHub
                   </a>
-
                   {/* Live Demo Button (if available) */}
                   {project.demo && (
                     <a
@@ -165,7 +150,6 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
             </motion.div>
           ))}
         </motion.div>
-
         {/* Pagination Buttons */}
         <div className="flex justify-center items-center space-x-4 mt-10">
           <button
@@ -173,8 +157,8 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
             disabled={page === 0}
             className={`px-6 py-3 rounded-lg text-lg font-medium transition-colors ${
               page === 0
-                ? "bg-gradient-to-r from-gray-300 to-gray-400 text-gray-700 cursor-not-allowed"
-                : "bg-gradient-to-r from-green-700 to-orange-500 text-white hover:bg-green-600"
+                ? 'bg-gradient-to-r from-gray-300 to-gray-400 text-gray-700 cursor-not-allowed'
+                : 'bg-gradient-to-r from-green-700 to-orange-500 text-white hover:bg-green-600'
             }`}
           >
             <FaArrowLeft className="inline-block mr-2" /> Previous
@@ -184,15 +168,14 @@ const Projects: React.FC<ProjectsProps> = ({ isDarkMode }) => {
             disabled={page >= Math.ceil(projects.length / 2) - 1}
             className={`px-6 py-3 rounded-lg text-lg font-medium transition-colors ${
               page >= Math.ceil(projects.length / 2) - 1
-                ? "bg-gradient-to-r from-gray-300 to-gray-400 text-gray-700 cursor-not-allowed"
-                : "bg-gradient-to-r from-green-700 to-orange-500 text-white hover:bg-green-600"
+                ? 'bg-gradient-to-r from-gray-300 to-gray-400 text-gray-700 cursor-not-allowed'
+                : 'bg-gradient-to-r from-green-700 to-orange-500 text-white hover:bg-green-600'
             }`}
           >
             Next <FaArrowRight className="inline-block ml-2" />
           </button>
         </div>
       </div>
-
       {/* Decorative Sparkles */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
         <div className="absolute top-10 left-10 sm:top-20 sm:left-20 text-green-500 text-3xl sm:text-4xl rotate-12">✨</div>

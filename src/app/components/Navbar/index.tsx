@@ -3,7 +3,7 @@
 'use client';
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { FaBars, FaTimes, FaHome, FaFileAlt, FaCode, FaBlog, FaEnvelope } from 'react-icons/fa';
+import { FaBars, FaTimes, FaHome, FaFileAlt, FaCode, FaEnvelope } from 'react-icons/fa';
 import { Moon, Sun } from 'lucide-react'; // Import Sun and Moon icons for dark mode toggle
 
 const Navbar = () => {
@@ -58,11 +58,7 @@ const Navbar = () => {
               <FaCode className="mr-2" /> Projects
             </Link>
           </li>
-          {/* <li>
-            <Link href="/projects" className="flex items-center hover:text-yellow-400 transition-colors duration-300">
-              <FaBlog className="mr-2" /> 
-            </Link>
-          </li> */}
+        
           <li>
             <Link href="/Footer" className="flex items-center hover:text-orange-400 transition-colors duration-300">
               <FaEnvelope className="mr-2" /> Contact_us
@@ -114,11 +110,7 @@ const Navbar = () => {
               <FaCode className="mr-2" /> Projects
             </Link>
           </li>
-          {/* <li>
-            <Link href="/projects" className="flex items-center hover:text-yellow-400 transition-colors duration-300 justify-center">
-              <FaBlog className="mr-2" /> BLOG
-            </Link>
-          </li> */}
+        
           <li>
             <Link href="/Footer" className="flex items-center hover:text-orange-400 transition-colors duration-300 justify-center">
               <FaEnvelope className="mr-2" /> CONTACT US

@@ -13,7 +13,7 @@ import {
   FaFigma,
   FaGit,
   FaHtml5,
-  FaCss3,
+  
 } from 'react-icons/fa';
 import { SiNextdotjs, SiDjango } from 'react-icons/si';
 import { AiOutlineApi } from 'react-icons/ai';
